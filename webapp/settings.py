@@ -37,7 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+
+    #3rd party apps
+    'health_check',                          
+    'health_check.db',                        
+    'health_check.storage',
+    'health_check.contrib.migrations',
+    'health_check.contrib.psutil',            
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -123,3 +130,11 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Health checks
+
+HEALTH_CHECK = {
+    'DISK_USAGE_MAX': 80, 
+    'MEMORY_MIN': 200,    # in MB, below 200mb of free memory
+}
