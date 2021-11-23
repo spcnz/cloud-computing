@@ -23,3 +23,10 @@ Setup the database, run Django migrations and create Django superuser::
   $ poetry run python manage.py migrate
   $ poetry run python manage.py createsuperuser
 ```
+
+Run the webapp server, in development mode:
+```
+    $ poetry run python manage.py runserver
+    $ xdg-open http://localhost:8000/
+    $ xdg-open http://localhost:8000/admin
+```
