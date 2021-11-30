@@ -3,6 +3,10 @@ About
 
 Webapp demo for cloud computing predavanja.
 
+Milena Laketić
+
+R2 22/ 2021
+
 Installation
 ====
 
@@ -17,6 +21,19 @@ This project doesn't require system wide installation, simply clone its reposito
 
 Quick-start
 ====
+
+Setup the database (PostgreSQL)
+
+Create .env file in root folder and define
+```
+  DB_PASS=yourpassword
+  DB_USER=yourusername
+```
+
+Afterwards run command
+```
+  export $(xargs < .env)
+```
 
 Setup the database, run Django migrations and create Django superuser::
 ```
