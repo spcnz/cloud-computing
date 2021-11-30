@@ -1,3 +1,15 @@
 from django.contrib import admin
 
-# Register your models here.
+from . import models
+
+
+@admin.register(models.Employee)
+class EmployeeAdmin(admin.ModelAdmin):
+    date_hierarchy = 'birth_date'
+    list_display = [
+        'name',
+        'surname',
+        'salary',
+        'birth_date'
+    ]
+    search_fields = ['name']
