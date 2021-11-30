@@ -13,3 +13,9 @@ class EmployeeAdmin(admin.ModelAdmin):
         'birth_date'
     ]
     search_fields = ['name']
+
+@admin.register(models.Counter)
+class CounterAdmin(admin.ModelAdmin):
+    list_display = [
+        'value'
+    ]
