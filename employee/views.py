@@ -10,9 +10,8 @@ def get_all(request):
     return JsonResponse(serializer.data, safe=False, status=200)
 
 def inc_counter(request):
-    try:
-        counter = Counter.objects.get()
-    except:
+    counter = Counter.objects.filter().first()
+    if (not counter):
         counter = Counter.objects.create()
     counter.value += 1
     counter.save()
