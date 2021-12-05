@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from .serializer import EmployeeSerializer, CounterSerializer
 
 
-def get_all():
+def get_all(request):
     data = Employee.objects.all()
     serializer = EmployeeSerializer(data, many=True)
     
