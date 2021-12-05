@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "webapp"
+version = "2021.0"
+description = "Webapp demo project for cloud computing lessions"
+authors = ["specnazm <laketic.milena98@gmail.om>"]
+license = "BSD"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+Django = "~3.2.0"
+django-health-check = "~3.16.0"
+psutil = "~5.8.0"
+djangorestframework = "~3.12"
+psycopg2-binary = "~=2.9"
+
+[tool.poetry.dev-dependencies]
+ipython = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
