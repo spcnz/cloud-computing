@@ -28,6 +28,7 @@ Create .env file in root folder and define
 ```
   DB_PASS=yourpassword
   DB_USER=yourusername
+  SECRET_KEY=djangosecretkey
 ```
 
 Afterwards run command
