@@ -7,6 +7,8 @@ services:
       - db-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5433:5432"
     healthcheck:
       test: /usr/bin/pg_isready
       interval: 5s
