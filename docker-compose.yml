@@ -1,0 +1,36 @@
+version: "3.9"
+   
+services:
+  db:
+    image: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: /usr/bin/pg_isready
+      interval: 5s
+      timeout: 10s
+      retries: 120
+    user: postgres
+  web:
+    build: .
+    command: >
+            bash -c "poetry run python manage.py migrate &&
+            poetry run python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_USER=postgres
+      - DB_PASS=postgres
+      - SECRET_KEY=django-insecure-k4sy+9^#s7egb(p8(ujx6+9=_sg6v3yta9182wul40z4pjzw3k
+    depends_on:
+      db:
+           condition: service_healthy
+
+volumes:
+  db-data:
