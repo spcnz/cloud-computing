@@ -33,8 +33,7 @@ services:
     image: specnazm/cloud-computing
     container_name: web_1
     command: >
-             bash -c "poetry run python manage.py migrate &&
-              poetry run python manage.py runserver 0.0.0.0:8001"
+             bash -c "poetry run gunicorn --bind 0.0.0.0:8001 webapp.wsgi"
     volumes:
       - .:/code
     ports:
@@ -51,8 +50,7 @@ services:
     image: specnazm/cloud-computing
     container_name: web_2
     command: >
-             bash -c "poetry run python manage.py migrate &&
-              poetry run python manage.py runserver 0.0.0.0:8002"
+            bash -c "poetry run gunicorn --bind 0.0.0.0:8002 webapp.wsgi"
     volumes:
       - .:/code
     ports:
