@@ -1,7 +1,7 @@
 name: ci
 on:
   push:
-    branches: checkpoint4
+    branches: main
 
 jobs:
   docker:
