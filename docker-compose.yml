@@ -30,7 +30,7 @@ services:
       retries: 120
     user: postgres
   web_1:
-    build: .
+    image: specnazm/cloud-computing
     container_name: web_1
     command: >
              bash -c "poetry run python manage.py migrate &&
@@ -48,7 +48,7 @@ services:
       db_1:
            condition: service_healthy
   web_2:
-    build: .
+    image: specnazm/cloud-computing
     container_name: web_2
     command: >
              bash -c "poetry run python manage.py migrate &&
