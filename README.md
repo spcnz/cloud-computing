@@ -1,11 +1,15 @@
 About
 ====
 
-Webapp demo for cloud computing predavanja.
+Webapp demo for cloud computing course.
 
 Milena Laketić
 
 R2 22/ 2021
+
+Prerequirements
+====
+Vagrant tool for managing virtual machine environments.
 
 Installation
 ====
@@ -15,36 +19,10 @@ This project doesn't require system wide installation, simply clone its reposito
 ``` 
   $ git clone https://github.com/specnazm/cloud-computing
   $ cd cloud-computing
-  $ poetry install
+  $ vagrant up --provision
 ```
 
-
-Quick-start
-====
-
-Setup the database (PostgreSQL)
-
-Create .env file in root folder and define
+And 
 ```
-  DB_PASS=yourpassword
-  DB_USER=yourusername
-  SECRET_KEY=djangosecretkey
-```
-
-Afterwards run command
-```
-  export $(xargs < .env)
-```
-
-Setup the database, run Django migrations and create Django superuser::
-```
-  $ poetry run python manage.py migrate
-  $ poetry run python manage.py createsuperuser
-```
-
-Run the webapp server, in development mode:
-```
-    $ poetry run python manage.py runserver
-    $ xdg-open http://localhost:8000/
-    $ xdg-open http://localhost:8000/admin
+    $ xdg-open http://0.0.0.0:8080
 ```
